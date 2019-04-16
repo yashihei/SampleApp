@@ -7,3 +7,20 @@ alice:
   name: Alice Cartelet
   email: alice@kinniro.mozaic
   password_digest: <%= User.digest('password') %>
+
+sharo:
+  name: Sharo Kirima
+  email: sharo@rabbit.house
+  password_digest: <%= User.digest('password') %>
+
+chino:
+  name: Chino Kafu
+  email: chino@rabbit.house
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
