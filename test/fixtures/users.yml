@@ -2,6 +2,7 @@ emily:
   name: Emily Stewart
   email: emily@idol.master
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 alice:
   name: Alice Cartelet
