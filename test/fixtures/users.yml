@@ -17,8 +17,8 @@ sharo:
   name: Sharo Kirima
   email: sharo@rabbit.house
   password_digest: <%= User.digest('password') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
+  activated: false
+  activated_at: nil
 
 chino:
   name: Chino Kafu
