@@ -5,5 +5,8 @@
         = render 'shared/user_info'
       %section.microposts_form
         = render 'shared/micropost_form'
+    .col-md-8
+      %h3 Micropost Feed
+      = render 'shared/feed'
 - else
   = render 'static_pages/welcome_page'
