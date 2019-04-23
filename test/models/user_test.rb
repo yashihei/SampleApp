@@ -87,4 +87,22 @@ class UserTest < ActiveSupport::TestCase
     emily.unfollow(alice)
     assert_not emily.following?(alice)
   end
+
+  test "feed should have the right posts" do
+    emily = users(:emily)
+    alice = users(:alice)
+    chino = users(:chino)
+    # フォローしているユーザーの投稿を確認
+    alice.microposts.each do |post_following|
+      assert chino.feed.include?(post_following)
+    end
+    # 自分地震の投稿を確認
+    emily.microposts.each do |post_self|
+      assert emily.feed.include?(post_self)
+    end
+    # フォローしていないユーザーの投稿を確認
+    alice.microposts.each do |post_unfollowed|
+      assert_not emily.feed.include?(post_unfollowed)
+    end
+  end
 end
