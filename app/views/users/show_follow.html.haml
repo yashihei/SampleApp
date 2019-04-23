@@ -4,10 +4,9 @@
     %section.user_info
       = gravatar_for @user
       %h1= @user.name
+      %span= link_to "view my profile", @user
       %span
-        = link_to "view my profile", @user
-      %span
-        %b Micropost:
+        %b Microposts:
         = @user.microposts.count
     %section.stats
       = render 'shared/stats'
@@ -21,4 +20,3 @@
       %ul.users.follow
         = render @users
       = will_paginate
-
