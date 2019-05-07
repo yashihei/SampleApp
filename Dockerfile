@@ -1,6 +1,6 @@
 FROM ruby:2.5
 
-ENV APP_ROOT /myqpp
+ENV APP_ROOT /myapp
 ENV LANG C.UTF-8
 
 RUN apt-get update -qq && apt-get install -y build-essential nodejs
