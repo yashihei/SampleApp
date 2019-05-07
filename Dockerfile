@@ -5,7 +5,6 @@ ENV LANG C.UTF-8
 
 RUN apt-get update -qq && apt-get install -y build-essential nodejs
 
-RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
 
 ADD Gemfile Gemfile
