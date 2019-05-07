@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  database:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: mysql2://root:root@database:3306
